@@ -1,0 +1,64 @@
+﻿<Page
+    x:Class="ProjectPhoenix.MainPage"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:local="using:ProjectPhoenix"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    mc:Ignorable="d">
+
+
+    <Grid Background="WhiteSmoke">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="*" />
+        </Grid.RowDefinitions>
+        <TextBlock Text="Tichu Counter"
+                   FontSize="36"
+                   HorizontalAlignment="Center"
+                   Grid.Row="0"
+                   VerticalAlignment="Center"
+                   Margin="0,20,0,20"/>
+        <StackPanel Grid.Row="1"
+                    Orientation="Vertical"
+                    HorizontalAlignment="Center"
+                    VerticalAlignment="Center">
+            <Button x:ConnectionId='1' 
+                Content="New Game"
+                Name="NewGameButton"
+                HorizontalAlignment="Center"
+                VerticalAlignment="Center"
+                Margin="0,30,0,30"
+                FontSize="22"                            
+                
+                />
+            <Button x:ConnectionId='2' 
+                Content="Continue Game"
+                Name="ContinueGameButton"
+                HorizontalAlignment="Center"
+                VerticalAlignment="Center"
+                Margin="0,30,0,30"
+                FontSize="22"
+                />
+            <Button x:ConnectionId='3' 
+                Content="Load Game"
+                Name="LoadGameButton"
+                HorizontalAlignment="Center"
+                VerticalAlignment="Center"
+                Margin="0,30,0,30"
+                FontSize="22"
+                />
+            <Button x:ConnectionId='4' 
+                Content="Settings"
+                Name="SettingsButton"
+                HorizontalAlignment="Center"
+                VerticalAlignment="Center"
+                Margin="0,30,0,30"
+                FontSize="22"
+                />
+        </StackPanel>
+    </Grid>
+
+
+</Page>
+

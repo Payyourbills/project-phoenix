@@ -22,9 +22,15 @@ namespace ProjectPhoenix
     /// </summary>
     public sealed partial class MainPage : Page
     {
+
         public MainPage()
         {
             this.InitializeComponent();
+        }
+
+        private void NewGameButton_Click(object sender, RoutedEventArgs e)
+        {
+            Frame.Navigate(typeof(NewGame));
         }
     }
 }

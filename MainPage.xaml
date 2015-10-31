@@ -7,143 +7,57 @@
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
     mc:Ignorable="d">
 
-   
 
-        <Grid Background="WhiteSmoke">
-            <Grid.RowDefinitions>
-                <RowDefinition Height="Auto" />
-                <RowDefinition Height="Auto" />
-                <RowDefinition Height="*" />
-            </Grid.RowDefinitions>
-
-            <Grid.ColumnDefinitions>
-                <ColumnDefinition Width="56" />
-                <ColumnDefinition Width="*" />
-                <ColumnDefinition Width="1*" />
-
-            </Grid.ColumnDefinitions>
-            <TextBlock 
-            x:Name="teamA" 
-            Text="Team A"
-            VerticalAlignment="Center" 
-            HorizontalAlignment="Center"
-            Grid.Column="1"
-            Grid.Row="0"
-            FontSize="20"/>
-
-            <TextBlock 
-            x:Name="teamB"
-            Text="Team B"
-            Grid.Column="2"
-            HorizontalAlignment="Center"
-            VerticalAlignment="Center"
-            Margin="0,0,0,0"
-            FontSize="20"/>
-            <TextBlock
-            x:Name="teamAscore"
-            Text="0"
-            Grid.Column="1"
-            Grid.Row="1"
-            FontSize="30"
-            HorizontalAlignment="Center"
-            VerticalAlignment="Top"
-            
-            />
-            <TextBlock
-            x:Name="teamBscore"
-            Text="0"
-            Grid.Column="2"
-            Grid.Row="1"
-            FontSize="30"
-            HorizontalAlignment="Center"
-            VerticalAlignment="Top"
-            
-            />
-            <StackPanel Grid.Row="2" Orientation="Horizontal" Grid.Column="1" Grid.ColumnSpan="2" >
-                <StackPanel 
-            Orientation="Vertical"
-            Grid.Row="2"
-            Grid.Column="1">
-
-                </StackPanel>
-                <StackPanel 
-            Orientation="Vertical"
-            Grid.Row="2"
-            Grid.Column="2">
-                </StackPanel>
-            </StackPanel>
-
-
-            <Button x:Name="EnterButton" Grid.Row="1" Grid.Column="1" Grid.ColumnSpan="2" HorizontalAlignment="Center" FontSize="20" Content="Enter" Click="EnterButton_Click"/>
-            <StackPanel x:Name="TeamAStackPanel"
+    <Grid Background="WhiteSmoke">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="*" />
+        </Grid.RowDefinitions>
+        <TextBlock Text="Tichu Counter"
+                   FontSize="36"
+                   HorizontalAlignment="Center"
+                   Grid.Row="0"
+                   VerticalAlignment="Center"
+                   Margin="0,20,0,20"/>
+        <StackPanel Grid.Row="1"
                     Orientation="Vertical"
-                    Grid.Row="2"
-                    Grid.Column="1">
+                    HorizontalAlignment="Center"
+                    VerticalAlignment="Center">
+            <Button 
+                Content="New Game"
+                Name="NewGameButton"
+                HorizontalAlignment="Center"
+                VerticalAlignment="Center"
+                Margin="0,30,0,30"
+                FontSize="22" Click="NewGameButton_Click"
+                
+                />
+            <Button 
+                Content="Continue Game"
+                Name="ContinueGameButton"
+                HorizontalAlignment="Center"
+                VerticalAlignment="Center"
+                Margin="0,30,0,30"
+                FontSize="22"
+                />
+            <Button 
+                Content="Load Game"
+                Name="LoadGameButton"
+                HorizontalAlignment="Center"
+                VerticalAlignment="Center"
+                Margin="0,30,0,30"
+                FontSize="22"
+                />
+            <Button 
+                Content="Settings"
+                Name="SettingsButton"
+                HorizontalAlignment="Center"
+                VerticalAlignment="Center"
+                Margin="0,30,0,30"
+                FontSize="22"
+                />
+        </StackPanel>
+    </Grid>
 
-            </StackPanel>
-            <StackPanel x:Name="TeamBStackPanel"
-                    Orientation="Vertical"
-                    Grid.Row="2"
-                    Grid.Column="2">
-
-            </StackPanel>
-
-            <StackPanel x:Name="RoundsPanel"
-                    Orientation="Vertical"
-                    Grid.Row="2"
-                    Grid.Column="1"
-                    Grid.ColumnSpan="2">
-
-
-            </StackPanel>
-
-
-            <TextBox x:Name="currentAscore" Grid.Row="1" Grid.Column="1" HorizontalAlignment="Center" VerticalAlignment="Center" InputScope="Number" TextChanged="currentAscore_TextChanged"/>
-            <TextBox x:Name="currentBscore" Grid.Row="1" Grid.Column="2" HorizontalAlignment="Center" VerticalAlignment="Center" InputScope="Number" TextChanging="currentBscore_TextChanging"/>
-
-
-
-            <RelativePanel>
-                <Button Name="HamburgerButton" FontFamily="Segoe MDL2 Assets" Content="&#xE700;" FontSize="36" Click="HamburgerButton_Click" />
-            </RelativePanel>
-            <SplitView Name="MySplitView" 
-                   Grid.Row="1" 
-                   DisplayMode="CompactOverlay" 
-                   OpenPaneLength="200" 
-                   CompactPaneLength="56" 
-                   HorizontalAlignment="Left"
-                   Visibility="Visible"
-                   Grid.ColumnSpan="3">
-                <SplitView.Pane>
-                    <ListBox SelectionMode="Single" 
-                         Name="IconsListBox" 
-                         SelectionChanged="IconsListBox_SelectionChanged">
-                        <ListBoxItem Name="NewGameListBoxItem">
-                            <StackPanel Orientation="Horizontal">
-                                <TextBlock FontFamily="Segoe MDL2 Assets" FontSize="36" Text="&#xE710;" />
-                                <TextBlock Text="New Game" FontSize="24" Margin="20,0,0,0" />
-                            </StackPanel>
-                        </ListBoxItem>
-
-                        <ListBoxItem Name="LoadGameListBoxItem">
-                            <StackPanel Orientation="Horizontal">
-                                <TextBlock FontFamily="Segoe MDL2 Assets" FontSize="36" Text="&#xE72C;" />
-                                <TextBlock Text="Load Game" FontSize="24" Margin="20,0,0,0" />
-                            </StackPanel>
-                        </ListBoxItem>
-                        <ListBoxItem Name="SettingsListBoxItem">
-                            <StackPanel Orientation="Horizontal">
-                                <TextBlock FontFamily="Segoe MDL2 Assets" FontSize="36" Text="&#xE713;" />
-                                <TextBlock Text="Settings" FontSize="24" Margin="20,0,0,0" />
-                            </StackPanel>
-                        </ListBoxItem>
-
-                    </ListBox>
-                </SplitView.Pane>
-
-
-
-            </SplitView>
-        </Grid>
 
 </Page>
