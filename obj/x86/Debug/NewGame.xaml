@@ -19,51 +19,51 @@
             <ColumnDefinition Width="*" />
 
         </Grid.ColumnDefinitions>
-        <TextBlock Grid.Row="0"
+        <TextBlock x:ConnectionId='1' Grid.Row="0"
                    Grid.Column="1"
                    HorizontalAlignment="Center"
                    VerticalAlignment="Center"
                    FontSize="22"
                    Name="NameATextBlock"/>
-        <TextBlock Grid.Row="0"
+        <TextBlock x:ConnectionId='2' Grid.Row="0"
                    Grid.Column="2"
                    HorizontalAlignment="Center"
                    VerticalAlignment="Center"
                    FontSize="22"
                    Name="NameBTextBlock"/>
-        <StackPanel 
+        <StackPanel x:ConnectionId='3' 
             Name="NameAStackPanel"
             Grid.Row="0"
             Grid.Column="1"
             HorizontalAlignment="Center"
             VerticalAlignment="Center" >
-            <TextBox Text="Team A"
+            <TextBox x:ConnectionId='26' Text="Team A"
                      Name="NameATextBox"
                      />
         </StackPanel>
-        <StackPanel 
+        <StackPanel x:ConnectionId='4' 
             Name="NameBStackPanel"
             Grid.Row="0"
             Grid.Column="2"
             HorizontalAlignment="Center"
             VerticalAlignment="Center" >
-            <TextBox Text="Team B"
+            <TextBox x:ConnectionId='25' Text="Team B"
                      Name="NameBTextBox"
                      />
         </StackPanel>
-        <StackPanel Name="ButtonStackPanel"
+        <StackPanel x:ConnectionId='5' Name="ButtonStackPanel"
                     Grid.Row="0"
                     Grid.Column="1"
                     Grid.ColumnSpan="2"
                     HorizontalAlignment="Center"
                     VerticalAlignment="Center">
-            <Button Name="EnterNameButton"
-                Content="&#xE73E;" FontFamily="Segoe MDL2 Assets" Click="EnterNameButton_Click"
+            <Button x:ConnectionId='24' Name="EnterNameButton"
+                Content="&#xE73E;" FontFamily="Segoe MDL2 Assets"                              
                 
                 />
         </StackPanel>
 
-        <TextBlock
+        <TextBlock x:ConnectionId='6'
             Name="TotalAScoreTextBlock"
             Text="0"
             Grid.Column="1"
@@ -73,7 +73,7 @@
             VerticalAlignment="Top"
             
             />
-        <TextBlock
+        <TextBlock x:ConnectionId='7'
             Name="TotalBScoreTextBlock"
             Text="0"
             Grid.Column="2"
@@ -83,23 +83,23 @@
             VerticalAlignment="Top"
             
             />
-        <TextBox 
+        <TextBox x:ConnectionId='8' 
             Name="ScoreATextBox"
             Grid.Row="1"
             Grid.Column="1"
             HorizontalAlignment="Center"
             VerticalAlignment="Center"
-            InputScope="Number" TextChanging="ScoreATextBox_TextChanging"
+            InputScope="Number"                                          
             />
-        <TextBox 
+        <TextBox x:ConnectionId='9' 
             Name="ScoreBTextBox"
             Grid.Row="1"
             Grid.Column="2"
             HorizontalAlignment="Center"
             VerticalAlignment="Center"
-            InputScope="Number" TextChanging="ScoreBTextBox_TextChanging"
+            InputScope="Number"                                          
             />
-        <Button Name="EnterScoreButton"
+        <Button x:ConnectionId='10' Name="EnterScoreButton"
                 Content="&#xE710;"
                 FontFamily="Segoe MDL2 Assets"
                 Grid.Row="1"
@@ -107,8 +107,8 @@
                 Grid.ColumnSpan="2"
                 HorizontalAlignment="Center"
                 VerticalAlignment="Center"
-                FontSize="22" Click="EnterScoreButton_Click"/>
-        <Button Name="ResetButton"
+                FontSize="22"                               />
+        <Button x:ConnectionId='11' Name="ResetButton"
                 Content="&#xE7A7;"
                 FontFamily="Segoe MDL2 Assets"
                 Grid.Row="1"
@@ -117,29 +117,29 @@
                 VerticalAlignment="Bottom"
                 HorizontalAlignment="Center"
                 FontSize="18"
-                Margin="0,0,0,10" Click="ResetButton_Click"/>
+                Margin="0,0,0,10"                          />
         <ScrollViewer Grid.Row="2" Grid.Column="1" Grid.ColumnSpan="2"
                       VerticalScrollBarVisibility="Auto">
-            <StackPanel Name="ScoreStackPanel">
+            <StackPanel x:ConnectionId='20' Name="ScoreStackPanel">
                 <Grid>
                     <Grid.ColumnDefinitions>
                     <ColumnDefinition Width="*" />
                     <ColumnDefinition Width="*" />    
                     </Grid.ColumnDefinitions>
-                    <StackPanel Name="ScoreAStackPanel"
+                    <StackPanel x:ConnectionId='21' Name="ScoreAStackPanel"
                                 Grid.Column="0"
                                 Orientation="Vertical"
                                 HorizontalAlignment="Center"
                                 >
                    
                     </StackPanel>
-                    <StackPanel Name="ScoreBStackPanel"
+                    <StackPanel x:ConnectionId='22' Name="ScoreBStackPanel"
                                 Grid.Column="1"
                                 Orientation="Vertical"
                                 HorizontalAlignment="Center">
                   
                     </StackPanel>
-                    <StackPanel x:Name="RoundsStackPanel"
+                    <StackPanel x:ConnectionId='23' x:Name="RoundsStackPanel"
                                 Orientation="Vertical"
                                 Grid.Column="0"
                                 Grid.ColumnSpan="2"
@@ -154,9 +154,9 @@
 
 
         <RelativePanel>
-            <Button Name="HamburgerButton" FontFamily="Segoe MDL2 Assets" Content="&#xE700;" FontSize="36" Click="HamburgerButton_Click"/>
+            <Button x:ConnectionId='19' Name="HamburgerButton" FontFamily="Segoe MDL2 Assets" Content="&#xE700;" FontSize="36"                              />
         </RelativePanel>
-        <SplitView Name="MySplitView" 
+        <SplitView x:ConnectionId='12' Name="MySplitView" 
                    Grid.Row="1" 
                    DisplayMode="CompactOverlay" 
                    OpenPaneLength="200" 
@@ -165,23 +165,23 @@
                    Visibility="Visible"
                    Grid.ColumnSpan="3">
             <SplitView.Pane>
-                <ListBox SelectionMode="Single" 
+                <ListBox x:ConnectionId='13' SelectionMode="Single" 
                          Name="IconsListBox" 
                          >
-                    <ListBoxItem Name="NewGameListBoxItem">
+                    <ListBoxItem x:ConnectionId='14' Name="NewGameListBoxItem">
                         <StackPanel Orientation="Horizontal">
-                            <TextBlock FontFamily="Segoe MDL2 Assets" FontSize="36" Text="&#xE710;" SelectionChanged="TextBlock_SelectionChanged" />
-                            <TextBlock Text="New Game" FontSize="24" Margin="20,0,0,0" SelectionChanged="TextBlock_SelectionChanged" />
+                            <TextBlock x:ConnectionId='17' FontFamily="Segoe MDL2 Assets" FontSize="36" Text="&#xE710;"                                               />
+                            <TextBlock x:ConnectionId='18' Text="New Game" FontSize="24" Margin="20,0,0,0"                                               />
                         </StackPanel>
                     </ListBoxItem>
 
-                    <ListBoxItem Name="LoadGameListBoxItem">
+                    <ListBoxItem x:ConnectionId='15' Name="LoadGameListBoxItem">
                         <StackPanel Orientation="Horizontal">
                             <TextBlock FontFamily="Segoe MDL2 Assets" FontSize="36" Text="&#xE72C;" />
                             <TextBlock Text="Load Game" FontSize="24" Margin="20,0,0,0" />
                         </StackPanel>
                     </ListBoxItem>
-                    <ListBoxItem Name="SettingsListBoxItem">
+                    <ListBoxItem x:ConnectionId='16' Name="SettingsListBoxItem">
                         <StackPanel Orientation="Horizontal">
                             <TextBlock FontFamily="Segoe MDL2 Assets" FontSize="36" Text="&#xE713;" />
                             <TextBlock Text="Settings" FontSize="24" Margin="20,0,0,0" />
@@ -193,3 +193,4 @@
         </SplitView>
     </Grid>
 </Page>
+

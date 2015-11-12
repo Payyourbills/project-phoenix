@@ -50,7 +50,6 @@
       <RootEvent Name="Click" />
     </RootType>
     <RootType FullName="ProjectPhoenix.MainPage" />
-    <RootType FullName="Microsoft.Xaml.DirectUI.ProxyTypes.ThemeResourceExtension" />
     <RootType FullName="Windows.UI.Xaml.Controls.ColumnDefinition">
       <RootProperty Name="Width" />
     </RootType>
