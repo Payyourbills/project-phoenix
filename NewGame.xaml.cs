@@ -27,6 +27,7 @@ namespace ProjectPhoenix
     {
         string path;
         SQLite.Net.SQLiteConnection conn;
+        Game game = new Game();
         int ScoreA, ScoreB, Rounds, TotalScoreA, TotalScoreB;
        
         public NewGame()
@@ -35,7 +36,8 @@ namespace ProjectPhoenix
             path = Path.Combine(Windows.Storage.ApplicationData.Current.LocalFolder.Path, "db.sqlite");
             conn = new SQLite.Net.SQLiteConnection(new SQLite.Net.Platform.WinRT.SQLitePlatformWinRT(), path);
             conn.CreateTable<Game>();
-            var add = conn.Insert(new Game());
+            
+            var add = conn.Insert(game);
             Debug.WriteLine(path);
 
         }
@@ -52,9 +54,11 @@ namespace ProjectPhoenix
             NameAStackPanel.Children.Remove(NameATextBox);
             NameBStackPanel.Children.Remove(NameBTextBox);
             ButtonStackPanel.Children.Remove(EnterNameButton);
+            game.A.Name = NameATextBlock.Text;
+            game.B.Name = NameBTextBlock.Text;
+            conn.Commit();
             
-           
-           
+
 
         }
 
@@ -112,6 +116,13 @@ namespace ProjectPhoenix
             ScoreATextBox.TextChanging += ScoreATextBox_TextChanging;
             ScoreBTextBox.TextChanging += ScoreBTextBox_TextChanging;
 
+            //Sqlite part
+            game.A.Score[Rounds] = ScoreA;
+            game.B.Score[Rounds] = ScoreB;
+            game.rounds = Rounds;
+            game.A.calcTotalScore();
+            game.B.calcTotalScore();
+            conn.Commit();
 
         }
         private void ResetButton_Click(object sender, RoutedEventArgs e)
